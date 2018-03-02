@@ -3,11 +3,11 @@ import BookListItem from './BookItem';
 
 class BookList extends Component {
   constructor(props) {
-  super(props)
+    super(props);
+
     this.state = {
-      books: [],
+      books: []
     }
-    this.getData = this.getData.bind(this);
   }
 
   getData() {
@@ -33,21 +33,20 @@ class BookList extends Component {
   }
 
   render() {
-    let newBooks = this.state.books.map((book, index) => {
-      return (
+    let books = this.state.books.map(book => {
+      return(
         <BookListItem
-          id={book.id}
           key={book.id}
           title={book.title}
           author={book.author}
         />
       )
-    });
+    })
 
     return(
       <div className="book-index">
         <h2>Readsgood</h2>
-        {newBooks}
+        {books}
       </div>
     )
   }
